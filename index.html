@@ -9,7 +9,7 @@
 <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
 
 <body style='margin : 0px; overflow: hidden;'>
-<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' artoolkit='sourceType: webcam;'>
+<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' embedded artoolkit='sourceType: webcam;'>
 
     <a-marker preset='custom' url='pattern.patt'>
         <a-box position='0 0.5 0' material='color: green;opacity: 0.5'></a-box>
@@ -23,7 +23,8 @@
 	              to="2 2 2"
 	              direction='alternate-reverse'
 	              easing= "ease-in-out-circ"     
-	              repeat="indefinite"></a-animation>
+	              repeat="indefinite">   
+	          </a-animation>
 	     </a-sphere>
     </a-marker>
 
