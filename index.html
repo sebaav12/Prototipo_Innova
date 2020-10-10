@@ -19,8 +19,10 @@
           position="0 0 0"
           scale="0.05 0.05 0.05"
           gltf-model="assets/earth/CHAHIN_EARTH.gltf"
-          ></a-entity>
-          <a-animation attribute="rotation" to="360 0 0" dur="3000" easing="linear" repeat="indefinite"> </a-animation>
+          >
+            <a-animation rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"> </a-animation>
+          </a-entity>
+
       </a-marker>
       
       <a-entity camera></a-entity>
