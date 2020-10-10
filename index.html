@@ -1,5 +1,6 @@
 <html>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   <script src="aframe-ar.js"></script>
   <body style='margin : 0px; overflow: hidden;'>
     
@@ -14,9 +15,12 @@
       </a-marker>
       
       <a-marker preset="kanji">
+          <a-entity
           position="0 0 0"
           scale="0.05 0.05 0.05"
           gltf-model="assets/CHAHIN_EARTH.gltf"
+          
+          ></a-entity>
       </a-marker>
       
       <a-entity camera></a-entity>
