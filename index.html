@@ -1,49 +1,70 @@
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    </head>
 
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            embedded
-            loading-screen="enabled: false;"
-            arjs="sourceType: webcam; debugUIEnabled: false;"
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script src="aframe-ar.js"></script>
+
+  <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+
+
+  <body style='margin : 0px; overflow: hidden;'>
+    
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+
+        <!-- Modelo Satelite-->
+        <a-assets>
+            <a-asset-item
+                id="animated-asset"
+                src="assets/models/satelite/satelite.gltf"
+            ></a-asset-item>
+        </a-assets>
+        
+        <!-- Marcadores de modelos-->
+        <a-marker preset="hiro">
+            <a-entity
+            position="0 0 0"
+            scale="0.05 0.05 0.05"
+            gltf-model="assets/models/mars/mars.gltf"
+            ></a-entity>
+        </a-marker>
+      
+        <a-marker preset="kanji">
+            <a-entity
+            position="0 0 0"
+            scale="0.05 0.05 0.05"
+            rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+            gltf-model="assets/models/earth/earth.gltf"
+            >
+            </a-entity>
+        </a-marker>
+
+        <a-marker
+            id="animated-marker"
+            type="pattern"
+            preset="custom"
+            url="assets/markers_patt/marker_satelite.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+            id="markerA"
         >
-            <a-assets>
-                <video
-                    src="assets/asset.mp4"
-                    preload="auto"
-                    id="vid"
-                    response-type="arraybuffer"
-                    loop
-                    crossorigin
-                    webkit-playsinline
-                    autoplay
-                    muted
-                    playsinline
-                ></video>
-            </a-assets>
+            <a-entity
+                id="bowser-model"
+                scale="0.04159623059548553 0.04159623059548553 0.04159623059548553"
+                animation-mixer="loop: repeat"
+                gltf-model="#animated-asset"
+                class="clickable"
+                gesture-handler
+            ></a-entity>
 
-                <a-video
-                    src="#vid"
-                    position='0 0.1 0'
-                    rotation="-90 0 0"
-                    look-at="[gps-camera]"
-                    videohandler
-                    smooth="true"
-                    smoothCount="10"
-                    smoothTolerance="0.01"
-                    smoothThreshold="5"
-                    autoplay="false"
-                    scale="1 1 1"
-                    gps-entity-place="latitude: -41.4509013; longitude: -72.9275780;"
-                ></a-video>
+        </a-marker>
+      
+        <a-entity camera></a-entity>
 
-            <a-camera gps-camera rotation-reader></a-camera>
-        </a-scene>
-    </body>
+    </a-scene>
+    
+    
+  </body>
 </html>
