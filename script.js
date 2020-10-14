@@ -22,20 +22,20 @@ var models = [
     {
         url: 'assets/models/earth/earth.gltf',
         scale: '0.020583155377681475 0.020583155377681475 0.020583155377681475',
-        info: 'Earth, Lv. 5, HP 10/10',
+        info: 'Earth, nuestro hogar',
         rotation: '0 180 0',
     },
     {
         url: 'assets/models/mars/mars.gltf',
         scale: '0.001679621049852858 0.001679621049852858 0.001679621049852858',
         rotation: '0 180 0',
-        info: 'Mars, Lv. 80, HP 100/100',
+        info: 'Mars, la proxima frontera',
     },
     {
         url: 'assets/models/jupiter/asset.gltf',
         scale: 'scale="0.002051953344612564 0.002051953344612564 0.002051953344612564',
         rotation: '0 180 0',
-        info: 'Jupiter, Lv. 99, HP 150/150',
+        info: 'Jupiter, ese gigante de gas ...',
     },
 ];
 
