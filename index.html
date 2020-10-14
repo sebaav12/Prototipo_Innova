@@ -1,6 +1,9 @@
 
 <!DOCTYPE html>
+
+
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -11,105 +14,19 @@
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
-    <a-scene
-        vr-mode-ui="enabled: false"
-		embedded
+    <div class="centered instructions"></div>
+    <a-scene 
+        vr-mode-ui='enabled: false' 
+        embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-
-        <a-assets>
-            <a-asset-item
-                id="animated-asset"
-                src="assets/models/rover/asset.gltf"
-            ></a-asset-item>
-            <a-asset-item
-                id="animated-asset-2"
-                src="assets/models/mars/mars.gltf"
-            ></a-asset-item>     
-            <a-asset-item
-                id="animated-asset-3"
-                src="assets/models/earth/earth.gltf"
-            ></a-asset-item> 
-            <a-asset-item
-                id="animated-asset-4"
-                src="assets/models/jupiter/asset.gltf"
-            ></a-asset-item> 
-        </a-assets>
-        
-        <a-entity 
-            gltf-model="#animated-asset"
-            rotation="0 180 0" scale="0.15 0.15 0.15" 
-            gps-entity-place="latitude: -38.535839; longitude: -72.422300;" 
-            animation-mixer/></a-entity>         
-            
-        <a-entity
-            gltf-model="#animated-asset-2"
-            rotation="0 180 0" scale="0.001679621049852858 0.001679621049852858 0.001679621049852858"
-            gps-entity-place="latitude: -38.535790; longitude: -72.422206;" 
-            animation-mixer/>     
-            ></a-entity>
-
-        <a-entity
-            gltf-model="#animated-asset-3"
-            rotation="0 180 0" scale="0.020583155377681475 0.020583155377681475 0.020583155377681475"
-            gps-entity-place="latitude: -38.535790; longitude: -72.422259;" 
-            animation-mixer/>     
-            ></a-entity>
-
-        <a-entity
-            gltf-model="#animated-asset-4"
-            rotation="0 180 0" scale="0.002051953344612564 0.002051953344612564 0.002051953344612564"
-            gps-entity-place="latitude: -38.535751; longitude: -72.422121;" 
-            animation-mixer/>     
-            ></a-entity>
-
-        <a-camera gps-camera rotation-reader></a-camera>
-	</a-scene>
+    <a-camera gps-camera rotation-reader></a-camera>
+</a-scene>
+<div class="centered">
+    <button data-action="change"></button>
+</div>
 </body>
-</html>
-
-
-<!--
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script>
-            THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-        </script>
-    </head>
-
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            renderer="logarithmicDepthBuffer: true;"
-            embedded
-            loading-screen="enabled: false;"
-            arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'
-        >
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="assets/models/rover/asset.gltf"
-                ></a-asset-item>
-            </a-assets>
-
-                <a-entity
-                    look-at="[gps-camera]"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    scale="0.8707736394617069 0.8707736394617069 0.8707736394617069"
-                    gps-entity-place="latitude: -38.548331; longitude: -72.243065;" 
-                ></a-entity>
-
-            <a-camera gps-camera rotation-reader></a-camera>
-        </a-scene>
-    </body>
-</html>
-
--->
