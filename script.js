@@ -32,10 +32,10 @@ var models = [
         info: 'Mars, la proxima frontera',
     },
     {
-        url: 'assets/models/jupiter/asset.gltf',
-        scale: 'scale="0.002051953344612564 0.002051953344612564 0.002051953344612564',
+        url: 'assets/models/rover/asset.gltf',
+        scale: 'scale="0.8707736394617069 0.8707736394617069 0.8707736394617069',
         rotation: '0 180 0',
-        info: 'Jupiter, ese gigante de gas ...',
+        info: 'Curiosity',
     },
 ];
 
