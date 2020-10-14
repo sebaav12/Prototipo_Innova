@@ -19,31 +19,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Roboto", sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    background: #1E90FF;
-    width: 160px;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: box-shadow, transform;
-    transition-property: box-shadow, transform;
-}
-.button:hover, .button:focus, .button:active{
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 2px solid white;
+    background-color: transparent;
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    outline: none;
 }
 
 .instructions {
