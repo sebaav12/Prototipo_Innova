@@ -24,15 +24,28 @@
                 id="animated-asset"
                 src="assets/models/rover/asset.gltf"
             ></a-asset-item>
-     
+            <a-asset-item
+                id="animated-asset-2"
+                src="assets/models/mars/mars.gltf"
+            ></a-asset-item>     
         </a-assets>
         
         <a-entity 
             gltf-model="#animated-asset"
             rotation="0 180 0" scale="0.15 0.15 0.15" 
             gps-entity-place="latitude: -41.4509013; longitude: -72.9275780;" 
-            animation-mixer/>
-        
+            animation-mixer/></a-entity>         
+            
+        <a-entity
+         
+            
+            gltf-model="#animated-asset-2"
+            rotation="0 180 0" scale="0.001679621049852858 0.001679621049852858 0.001679621049852858"
+            gps-entity-place="latitude: -41.4509014; longitude: -72.9275780;" 
+            animation-mixer/>     
+            ></a-entity>
+
+
         <a-camera gps-camera rotation-reader></a-camera>
 	</a-scene>
 </body>
