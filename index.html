@@ -24,24 +24,15 @@
                 id="animated-asset"
                 src="assets/models/rover/asset.gltf"
             ></a-asset-item>
-            <a-asset-item
-                id="animated-asset-2"
-                src="assets/models/jupiter/asset.gltf"
-            ></a-asset-item>
+     
         </a-assets>
         
         <a-entity 
             gltf-model="#animated-asset"
             rotation="0 180 0" scale="0.15 0.15 0.15" 
-            gps-entity-place="latitude: -38.548331; longitude: -72.243065;" 
+            gps-entity-place="latitude: -41.4509013; longitude: -72.9275780;" 
             animation-mixer/>
-        <a-entity 
-            gltf-model="#animated-asset-2"
-            look-at="[gps-camera]"
-            animation-mixer="loop: repeat"
-            rotation="0 180 0" scale="0.002051953344612564 0.002051953344612564 0.002051953344612564"
-            gps-entity-place="latitude: -38.548332; longitude: -72.243065;" 
-            animation-mixer/>
+        
         <a-camera gps-camera rotation-reader></a-camera>
 	</a-scene>
 </body>
