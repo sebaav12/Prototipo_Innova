@@ -1,4 +1,6 @@
+
 <!doctype html>
+
 <html>
     <head>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -20,23 +22,23 @@
         >
             <a-assets>
                 <a-asset-item
-                    id="animated-asset"
-                    src="assets/asset.gltf"
+                    id="earth-asset"
+                    src="assets/models/earth/asset.gltf"
                 ></a-asset-item>
             </a-assets>
 
             <a-marker
-                id="animated-marker"
+                id="earth-marker"
                 type="pattern"
                 preset="custom"
-                url="assets/marker.patt"
+                url="assets/markers_patt/marker_earth.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
                 <a-entity
-                    id="bowser-model"
+                    id="earth-model"
                     scale="0.020583155377681475 0.020583155377681475 0.020583155377681475"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
