@@ -11,72 +11,41 @@
 
   <body style='margin : 0px; overflow: hidden;'>
     
-    <a-scene  
+    <a-scene
     arjs
     embedded
     renderer="logarithmicDepthBuffer: true;"
     vr-mode-ui="enabled: false"
     gesture-detector
     id="scene"
+  >
+    <a-assets>
+      <a-asset-item
+        id="bowser"
+        src="https://cdn.glitch.com/06bd98b4-97ee-4c07-a546-fe39ca205034%2Fbowser.glb"
+      >
+      </a-asset-item>
+    </a-assets>
+  
+    <a-marker
+      preset="hiro"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+      id="markerA"
     >
-
-        <!-- Modelo Satelite-->
-        <a-assets>
-            <a-asset-item
-                id="animated"
-                src="assets/models/satelite/satelite.gltf"
-            ></a-asset-item>
-        </a-assets>
-        
-        <!-- Marcadores de modelos-->
-
-        <!-- Marcador Mars-->
-        <a-marker preset="hiro">
-            <a-entity
-            position="0 0 0"
-            scale="0.001679621049852858 0.001679621049852858 0.001679621049852858"
-            gltf-model="assets/models/mars/mars.gltf"
-            ></a-entity>
-        </a-marker>
-      
-        <!-- Marcador Earth-->
-        <a-marker preset="kanji">
-            <a-entity
-            position="0 0 0"
-            scale="0.020583155377681475 0.020583155377681475 0.020583155377681475"
-            rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
-            gltf-model="assets/models/earth/earth.gltf"
-            >
-            </a-entity>
-        </a-marker>
-        
-        <!-- Marcador Satelite-->
-        <a-marker
-            type="pattern"
-            preset="custom"
-            url="assets/markers_patt/marker_satelite.patt"
-            raycaster="objects: .clickable"
-            emitevents="true"
-            cursor="fuse: false; rayOrigin: mouse;"     
-            id="markerA"
-        >
-            <a-entity
-                id="animated-model"
-                position="0 0 0"
-                scale="0.04159623059548553 0.04159623059548553 0.04159623059548553"
-                gltf-model="#animated"
-                class="clickable"
-                gesture-handler
-            ></a-entity>
-
-
-          
-
-        </a-marker>
-      
-        <a-entity camera></a-entity>
-
-    </a-scene>
+      <a-entity
+        id="bowser-model"
+        gltf-model="#bowser"
+        position="0 0 0"
+        scale="0.05 0.05 0.05"
+        class="clickable"
+        gesture-handler
+      >
+      </a-entity>
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
     
     
   </body>
