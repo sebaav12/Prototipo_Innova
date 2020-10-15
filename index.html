@@ -1,4 +1,6 @@
+
 <!doctype html>
+
 <html>
     <head>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -20,26 +22,74 @@
         >
             <a-assets>
                 <a-asset-item
-                    id="animated-asset"
-                    src="assets/asset.gltf"
+                    id="earth-asset"
+                    src="assets/models/earth/asset.gltf"
+                ></a-asset-item>
+                <a-asset-item
+                    id="mars-asset"
+                    src="assets/models/mars/asset.gltf"
+                ></a-asset-item>
+                <a-asset-item
+                    id="satelite-asset"
+                    src="assets/models/satelite/asset.gltf"
                 ></a-asset-item>
             </a-assets>
 
             <a-marker
-                id="animated-marker"
+                id="earth-marker"
                 type="pattern"
                 preset="custom"
-                url="assets/marker.patt"
+                url="assets/markers_patt/marker_earth.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
                 <a-entity
-                    id="bowser-model"
+                    id="earth-model"
+                    scale="0.020583155377681475 0.020583155377681475 0.020583155377681475"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#earth-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
+            <a-marker
+                id="mars-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/markers_patt/marker_mars.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+            >
+                <a-entity
+                    id="mars-model"
+                    scale="0.002099526312316072 0.002099526312316072 0.002099526312316072"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#mars-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
+            <a-marker
+                id="satelite-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/markers_patt/marker_satelite.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerD"
+            >
+                <a-entity
+                    id="satelite-model"
                     scale="0.04159623059548553 0.04159623059548553 0.04159623059548553"
                     animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
+                    gltf-model="#satelite-asset"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
