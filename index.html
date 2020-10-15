@@ -25,6 +25,10 @@
                     id="earth-asset"
                     src="assets/models/earth/asset.gltf"
                 ></a-asset-item>
+                <a-asset-item
+                    id="mars-asset"
+                    src="assets/models/mars/asset.gltf"
+                ></a-asset-item>
             </a-assets>
 
             <a-marker
@@ -42,6 +46,26 @@
                     scale="0.020583155377681475 0.020583155377681475 0.020583155377681475"
                     animation-mixer="loop: repeat"
                     gltf-model="#earth-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
+            <a-marker
+                id="mars-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/markers_patt/marker_mars.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+            >
+                <a-entity
+                    id="mars-model"
+                    scale="0.002099526312316072 0.002099526312316072 0.002099526312316072"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#mars-asset"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
