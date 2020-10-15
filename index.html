@@ -1,22 +1,25 @@
-
-
 <html>
 
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>OrbitAR</title>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-        <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
-        <script>
-            THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-        </script>
-    </head>
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  
+  
+  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+
+      <script>
+        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
+    </script>
+
+</head>
 
 
-    <body style='margin : 0px; overflow: hidden;'>
+  <body style='margin : 0px; overflow: hidden;'>
     
     <a-scene
     arjs
@@ -52,102 +55,8 @@
       </a-entity>
     </a-marker>
     <a-entity camera></a-entity>
-  </a-scene>    
-  </body>
-</html>
-
-
-
-
-<!--
-
-<html>
-
-    <head>
-        <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>OrbitAR</title>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-        <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
-        <script>
-            THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-        </script>
-    </head>
-
-
-    <body style='margin : 0px; overflow: hidden;'>
-        
-        <a-scene
-        arjs
-        embedded
-        renderer="logarithmicDepthBuffer: true;"
-        vr-mode-ui="enabled: false"
-        gesture-detector
-        id="scene"
-      >
-
-        <!-- Modelo Satelite-->
-        <a-assets>
-            <a-asset-item
-                id="animated-asset"
-                src="assets/models/satelite/satelite.gltf"
-            ></a-asset-item>
-        </a-assets>
-        
-        <!-- Marcadores de modelos-->
-
-        <!-- Marcador Mars-->
-        <a-marker preset="hiro">
-            <a-entity
-            position="0 0 0"
-            scale="0.001679621049852858 0.001679621049852858 0.001679621049852858"
-            gltf-model="assets/models/mars/mars.gltf"
-            ></a-entity>
-        </a-marker>
-      
-        <!-- Marcador Earth-->
-        <a-marker preset="kanji">
-            <a-entity
-            position="0 0 0"
-            scale="0.020583155377681475 0.020583155377681475 0.020583155377681475"
-            rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
-            gltf-model="assets/models/earth/earth.gltf"
-            >
-            </a-entity>
-        </a-marker>
-        
-
-
-        <!-- Marcador Satelite-->
-        <a-marker
-            id="animated-marker"
-            type="pattern"
-            preset="custom"
-            url="assets/markers_patt/marker_satelite.patt"
-            raycaster="objects: .clickable"
-            emitevents="true"
-            cursor="fuse: false; rayOrigin: mouse;"
-            id="markerA"
-        >
-            <a-entity
-                id="animated-model"
-                gltf-model="#animated-asset"
-                position="0 0 0"
-                scale="0.04159623059548553 0.04159623059548553 0.04159623059548553"
-                class="clickable"
-                gesture-handler
-            ></a-entity>
-
-        </a-marker>
-      
-        <a-entity camera></a-entity>
-
-    </a-scene>
+  </a-scene>
     
     
   </body>
 </html>
-
--->
